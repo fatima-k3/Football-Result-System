@@ -1,8 +1,10 @@
+
 import java.awt.Font;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
+
 
 public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 	public FootBallResultSystemGUI() {
@@ -51,6 +53,9 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		englandLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		englandLeague.addActionListener(this);
 		add(englandLeague);
+		
+		
+		
 	}
 
 }
