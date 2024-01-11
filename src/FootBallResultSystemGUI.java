@@ -3,6 +3,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -13,7 +14,7 @@ import javax.swing.JButton;
 
 public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 	
-	JLabel gamesResultLable,date,resultgame, teamLogoA, teamLogoB, teamNameA, teamNameB;
+	JLabel gamesResultLable,date,resultgame, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB;
 	
 	public FootBallResultSystemGUI() {
 		super("FootBall Result System");
@@ -105,6 +106,22 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		 teamNameB.setBounds( 289, 213, 60, 30);
 		 teamNameB.setFont(new Font("Dialog" , Font.BOLD, 10));
 		 add(teamNameB);
+		 
+		 scorerA = new JLabel("Salah");
+		 scorerB.setBounds( 16, 240, 55, 30);
+		 scorerA.setFont(new Font("Dialog" , Font.PLAIN, 10));
+		 add(scorerA);
+		 
+		 scorerB = new JLabel("De Bruyne");
+		 scorerA.setBounds( 289, 240, 55, 30);
+		 scorerB.setFont(new Font("Dialog" , Font.PLAIN, 10));
+		 add(scorerB);
+		 
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		
+		
 	}
 
 }
