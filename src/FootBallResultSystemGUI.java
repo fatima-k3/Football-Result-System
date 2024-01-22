@@ -14,7 +14,8 @@ import javax.swing.JButton;
 
 public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 	
-	JLabel gamesResultLable,date,resultgame, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB;
+	JLabel gamesResultLable,date,resultgame, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB,gameStates, week 
+ ;
 	
 	public FootBallResultSystemGUI() {
 		super("FootBall Result System");
@@ -76,52 +77,59 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		 add(gamesResultLable);
 		 
 		 date=new JLabel("2024/01/09");
-		 date.setBounds(15 , 155, 340 ,30);
+		 date.setBounds(15 , 168, 340 ,30);
 		 date.setFont(new Font("Dialog" , Font.PLAIN, 19));
 		 date.setHorizontalAlignment(SwingConstants.CENTER);
 		 add(date);
 		 
 		 resultgame=new JLabel("2-1");
-		 resultgame.setBounds(15 , 147, 340 ,155);
+		 resultgame.setBounds(15 , 162, 340 ,155);
 		 resultgame.setFont(new Font("Dialog" , Font.BOLD, 90));
 		 resultgame.setHorizontalAlignment(SwingConstants.CENTER);
 		 add(resultgame);
 		 
 		 teamLogoA = new JLabel();
-		 teamLogoA.setBounds( 70, 200, 50, 55);
+		 teamLogoA.setBounds( 70, 215, 50, 55);
 		 teamLogoA.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		 add(teamLogoA);
 		 
 		 teamLogoB = new JLabel();
-		 teamLogoB.setBounds( 239, 200, 50, 55);
+		 teamLogoB.setBounds( 239, 215, 50, 55);
 		 teamLogoB.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		 add(teamLogoB);
 		 
 		 teamNameA = new JLabel("Liverpool");
-		 teamNameA.setBounds( 16, 213, 55, 30);
+		 teamNameA.setBounds( 16, 228, 55, 30);
 		 teamNameA.setFont(new Font("Dialog" , Font.BOLD, 10));
 		 add(teamNameA);
 		 
 		 teamNameB = new JLabel("<html><b>Manchester</b> city</html>");
-		 teamNameB.setBounds( 289, 213, 60, 30);
+		 teamNameB.setBounds( 289, 228, 60, 30);
 		 teamNameB.setFont(new Font("Dialog" , Font.BOLD, 10));
 		 add(teamNameB);
 		 
 		 scorerA = new JLabel("Salah");
-		 scorerB.setBounds( 16, 240, 55, 30);
+		 scorerA.setBounds( 16, 265, 55, 30);
 		 scorerA.setFont(new Font("Dialog" , Font.PLAIN, 10));
 		 add(scorerA);
 		 
 		 scorerB = new JLabel("De Bruyne");
-		 scorerA.setBounds( 289, 240, 55, 30);
+		 scorerB.setBounds( 289, 265, 55, 30);
 		 scorerB.setFont(new Font("Dialog" , Font.PLAIN, 10));
 		 add(scorerB);
 		 
+		 gameStates = new JLabel("Not Started");
+		 gameStates.setBounds(15, 157, 80, 30);
+		 gameStates.setFont(new Font("Dialog" , Font.PLAIN, 12));
+		 add(gameStates);
+		 
+		 week = new JLabel("nightteenth");
+		 week.setBounds(280, 155, 80, 30);
+		 week.setFont(new Font("Dialog" , Font.PLAIN, 12));
+		 add(week);
+
+
 	}
 
-	public void actionPerformed(ActionEvent e) {
-		
-		
-	}
 
 }
