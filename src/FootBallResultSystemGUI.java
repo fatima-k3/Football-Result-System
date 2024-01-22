@@ -109,28 +109,18 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		 add(teamNameB);
 		 
 		 scorerA = new JLabel("Salah");
-<<<<<<< HEAD
 		 scorerA.setBounds( 16, 240, 55, 30);
-=======
-<<<<<<< HEAD
 		 scorerA.setBounds( 16, 265, 55, 30);
-=======
 		 scorerA.setBounds( 16, 240, 55, 30);
->>>>>>> 037c194d2da0e67c6f4dd698df60ef1818a5fea1
->>>>>>> 2e438a4df6e8989fca1f38c8a12cacd5aef2f4dc
+		 scorerA.setBounds( 16, 265, 55, 30);
 		 scorerA.setFont(new Font("Dialog" , Font.PLAIN, 10));
 		 add(scorerA);
 		 
 		 scorerB = new JLabel("De Bruyne");
-<<<<<<< HEAD
 		 scorerB.setBounds( 289, 240, 55, 30);
-=======
-<<<<<<< HEAD
 		 scorerB.setBounds( 289, 265, 55, 30);
-=======
 		 scorerB.setBounds( 289, 240, 55, 30);
->>>>>>> 037c194d2da0e67c6f4dd698df60ef1818a5fea1
->>>>>>> 2e438a4df6e8989fca1f38c8a12cacd5aef2f4dc
+		 scorerB.setBounds( 289, 265, 55, 30);
 		 scorerB.setFont(new Font("Dialog" , Font.PLAIN, 10));
 		 add(scorerB);
 		 
