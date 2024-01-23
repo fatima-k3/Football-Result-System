@@ -7,10 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+
+import org.json.simple.JSONObject;
+
 import javax.swing.JFrame;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-
+import org.json.simple.JSONArray;
 
 public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 	
@@ -28,7 +31,8 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 
 	private void addGUIComponents() {
 		
-		JButton iranLeague = new JButton("Iran");
+		JButton iranLeague = new JButton("Portugal");
+		iranLeague.setName("Portugal");
 		iranLeague.setBounds(90 , 20, 140 , 40);
 		iranLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		iranLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -36,6 +40,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		add(iranLeague);
 		
 		JButton spainLeague = new JButton("Spain");
+		spainLeague.setName("Spain");
 		spainLeague.setBounds(305 , 20, 140 , 40);
 		spainLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		spainLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -43,6 +48,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		add(spainLeague);
 		
 		JButton italyLeague = new JButton("Italy");
+		italyLeague.setName("Italy");
 		italyLeague.setBounds(520 , 20, 140 , 40);
 		italyLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		italyLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -50,6 +56,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		add(italyLeague);
 		
 		JButton germanyLeague = new JButton("Germany");
+		germanyLeague.setName("Germany");
 		germanyLeague.setBounds(90 , 80, 140 , 40);
 		germanyLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		germanyLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -57,6 +64,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		add(germanyLeague);
 		
 		JButton franceLeague = new JButton("France");
+		franceLeague.setName("France");
 		franceLeague.setBounds(305 , 80, 140 , 40);
 		franceLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		franceLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -64,6 +72,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		add(franceLeague);
 		
 		JButton englandLeague = new JButton("England");
+		englandLeague.setName("England");
 		englandLeague.setBounds(520 , 80, 140 , 40);
 		englandLeague.setFont(new Font("Dialog" , Font.PLAIN, 22));
 		englandLeague.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
@@ -135,6 +144,36 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		 add(week);
 
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	
+		JButton o = (JButton)e.getSource();
+		String name = o.getName();
+		JSONArray matches = new JSONArray();
+		switch (name) {
+		case "Portugal"://PPL
+			matches = FootBallResultSystemAPI.getLeageData("PPL");
+			break;
+		case "Spain"://PD
+			matches = FootBallResultSystemAPI.getLeageData("PD");
+			break;
+		case "Italy"://SA
+			matches = FootBallResultSystemAPI.getLeageData("SA");
+			break;
+		case "France"://FL1
+			matches = FootBallResultSystemAPI.getLeageData("FL1");
+			break;
+		case "Germany"://BL1
+			matches = FootBallResultSystemAPI.getLeageData("BL1");
+			break;
+		case "England"://PL
+			matches = FootBallResultSystemAPI.getLeageData("PL");
+			break;
+		}
+		
+		
 	}
 
 
