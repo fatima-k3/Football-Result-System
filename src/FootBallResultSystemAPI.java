@@ -45,8 +45,7 @@ public class FootBallResultSystemAPI {
 	            
 	            JSONParser parser = new JSONParser();
 	            JSONObject resultJsonObj = (JSONObject) parser.parse(String.valueOf(resultJson));
-
-
+	            
 	            JSONArray matches = (JSONArray) resultJsonObj.get("matches");
 	            return matches;
 	            
