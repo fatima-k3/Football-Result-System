@@ -2,8 +2,10 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -13,24 +15,16 @@ import java.io.IOException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-<<<<<<< HEAD
-import javax.swing.JTable;
-=======
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
 import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableModel;
-
+import javax.swing.JTextArea;
 import org.json.simple.JSONObject;
 
 import javax.swing.JFrame;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-<<<<<<< HEAD
-import javax.swing.GroupLayout;
-=======
 import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
 import javax.swing.JButton;
 import org.json.simple.JSONArray;
 
@@ -43,6 +37,8 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+		setResizable(false);
+		getContentPane().setBackground(Color.BLUE);
 		addGUIComponents();
 		
 	}
@@ -97,33 +93,8 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		englandLeague.addActionListener(this);
 		add(englandLeague);
 	}
-		
-<<<<<<< HEAD
-	}
-	
-	int dateH = 170, boxH = 165, resultH = 133, logoA = 185, logoB = 185, nameAH = 195, nameBH = 195;
-	public void ShowResult(JSONObject results) {
-		
-		 JLabel gameResult =new JLabel();
-		 gameResult.setBounds(15 , boxH = boxH +105, 700 , 90);
-		 gameResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		 add(gameResult);
+			
 
-		
-		 date=new JLabel("2024/01/09");
-		 date.setBounds(20 , dateH = dateH + 105, 340 ,30);
-		 date.setFont(new Font("Dialog" , Font.PLAIN, 19));
-		 add(date);
-		 
-		 resultgame=new JLabel("2-1");
-		 resultgame.setBounds(201, resultH = resultH +105, 340 ,155);
-		 resultgame.setFont(new Font("Dialog" , Font.BOLD, 90));
-		 resultgame.setHorizontalAlignment(SwingConstants.CENTER);
-		 add(resultgame);
-		 
-		 teamLogoA = new JLabel();
-		 teamLogoA.setBounds( 430, logoA = logoA + 105, 50, 55);
-=======
 		public void setLabels(int index, JSONObject match, JPanel mainScores) {
 			
 			
@@ -147,96 +118,37 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 			
 		JLabel date,resultgameA,resultgameB, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB,gameStates, week; 
 		
-		int distanceToTop = index * 190 + 20 + 140;
 		
 		 JPanel gamesResultLable= new JPanel();
-		 gamesResultLable.setBounds(10 , distanceToTop, 340 , 180);
+		 gamesResultLable.setPreferredSize(new Dimension(730,180));
 		 gamesResultLable.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		 
 		 date=new JLabel(dateJson);
-		 date.setBounds(15 ,13, 340 ,30);
 		 date.setFont(new Font("Dialog" , Font.PLAIN, 19));
-		 date.setHorizontalAlignment(SwingConstants.CENTER);
 		 gamesResultLable.add(date);
 		 
-		 resultgameA=new JLabel(String.valueOf(scoreA));
-		 resultgameA.setBounds(15 , 7, 150 ,155);
-		 resultgameA.setFont(new Font("Dialog" , Font.BOLD, 90));
-		 resultgameA.setHorizontalAlignment(SwingConstants.CENTER);
-		 gamesResultLable.add(resultgameA);
-		 
-		 resultgameB=new JLabel(String.valueOf(scoreB));
-		 resultgameB.setBounds(185 , 7, 150 ,155);
-		 resultgameB.setFont(new Font("Dialog" , Font.BOLD, 90));
-		 resultgameB.setHorizontalAlignment(SwingConstants.CENTER);
-		 gamesResultLable.add(resultgameB);
-		 
-		 teamLogoA = new JLabel(loadImage(homeTeamlogo));
-		 teamLogoA.setBounds( 70, 60, 50, 55);
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
-		 teamLogoA.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		 gamesResultLable.add(teamLogoA);
-		 
-<<<<<<< HEAD
-		 teamLogoB = new JLabel();
-		 teamLogoB.setBounds( 249, logoB = logoB + 105, 50, 55);
-=======
-		 teamLogoB = new JLabel(loadImage(awayTeamlogo));
-		 teamLogoB.setBounds( 239, 60, 50, 55);
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
-		 teamLogoB.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		 gamesResultLable.add(teamLogoB);
-		 
-<<<<<<< HEAD
-		 teamNameA = new JLabel("Liverpool");
-		 teamNameA.setBounds( 490, nameAH = nameAH + 105, 90, 30);
-		 teamNameA.setFont(new Font("Dialog" , Font.BOLD, 14));
-		 add(teamNameA);
-		 //"<html><b>Manchester</b> city</html>
-		 teamNameB = new JLabel("liverpool");
-		 teamNameB.setBounds( 160, nameBH = nameBH + 105, 90, 30);
-		 teamNameB.setFont(new Font("Dialog" , Font.BOLD, 14));
-		 add(teamNameB);
-		 
-		 scorerA = new JLabel("Salah");
-		 scorerA.setBounds( 580, 180, 55, 30);
-		 scorerA.setFont(new Font("Dialog" , Font.PLAIN, 10));
-		 add(scorerA);
-		 
-		 scorerB = new JLabel("De Bruyne");
-		 scorerB.setBounds( 100, 180, 55, 30);
-		 scorerB.setFont(new Font("Dialog" , Font.PLAIN, 10));
-		 add(scorerB);
-		 
-		 gameStates = new JLabel("Not Started");
-		 gameStates.setBounds(20, 180, 80, 30);
-		 gameStates.setFont(new Font("Dialog" , Font.PLAIN, 12));
-		 add(gameStates);
-		 
-		 week = new JLabel("nightteenth");
-		 week.setBounds(640, 160, 80, 30);
-		 week.setFont(new Font("Dialog" , Font.PLAIN, 12));
-		 add(week);
-
-	     
-=======
 		 teamNameA = new JLabel(homeTeamName);
-		 teamNameA.setBounds( 16, 73, 55, 30);
 		 teamNameA.setFont(new Font("Dialog" , Font.BOLD, 10));
 		 gamesResultLable.add(teamNameA);
 		 
+		 resultgameA=new JLabel(String.valueOf(scoreA));
+		 resultgameA.setFont(new Font("Dialog" , Font.BOLD, 90));
+		 gamesResultLable.add(resultgameA);
+		 
 		 teamNameB = new JLabel(awayTeamName);
-		 teamNameB.setBounds( 289, 73, 60, 30);
 		 teamNameB.setFont(new Font("Dialog" , Font.BOLD, 10));
 		 gamesResultLable.add(teamNameB);
 		 
+		 resultgameB=new JLabel(String.valueOf(scoreB));
+		 resultgameB.setFont(new Font("Dialog" , Font.BOLD, 90));
+		 gamesResultLable.add(resultgameB);
+	     
 		 
 		 gameStates = new JLabel(StatusJson);
-		 gameStates.setBounds(15, 2, 80, 30);
 		 gameStates.setFont(new Font("Dialog" , Font.PLAIN, 12));
 		 gamesResultLable.add(gameStates);
-		 mainScores.add(gamesResultLable);
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
+		 
+		mainScores.add(gamesResultLable);		
 	}
 
 	@Override
@@ -266,55 +178,29 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 			break;
 		}
 		
-<<<<<<< HEAD
-		for(int i = 0 ; i < matches.size() ; i++) {
-			
-			JSONObject match = (JSONObject) matches.get(i);
-			 
-			String gameStatus = (String) match.get("status");	
-			String date = (String) match.get("utcDate");
-			
-			JSONObject  homeTeam = (JSONObject) match.get("homeTeam");
-			String nameA = (String) homeTeam.get("shortName");
-			JSONObject  awayTeam = (JSONObject) match.get("awayTeam");
-			String nameB = (String) homeTeam.get("shortName");
-			
-			JSONObject  score = (JSONObject) match.get("score");
-			JSONObject  fullTime = (JSONObject) score.get("fullTime");
-			int homeScore = (int) fullTime.get("home");
-			int awayScore = (int) fullTime.get("away");
-			
-			JSONObject results = new JSONObject();
-			results.put("game_status", gameStatus);
-			results.put("date", date);
-			results.put("nameA", nameA);
-			results.put("nameB", nameB);
-			results.put("home_score", homeScore);
-			results.put("home_score", homeScore);
-			
-			ShowResult(results);
-		}
-=======
-		
-		
+
 		JPanel mainScoresPanel = new JPanel();
-		int h=matches.size() * 190;
-		mainScoresPanel.setBounds(205,140, 340, h);
+		mainScoresPanel.setBounds(5, 140, 730, 500);
+		mainScoresPanel.setLayout(new GridLayout(0, 1, 10, 10));
 		mainScoresPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE));
- 		mainScoresPanel.setLayout(new FlowLayout());//new BoxLayout(mainScoresPanel, BoxLayout.Y_AXIS));
- 		//mainScoresPanel.setLayout(new BorderLayout());
+
+// 		mainScoresPanel.setLayout(new BoxLayout(mainScoresPanel, BoxLayout.Y_AXIS));
+ 		//mainScoresPanel.setLayout(new BorderLayout());/
+ 		
+ 		
  		
 		for (int i =0; i < matches.size(); i++) {
 	
 			JSONObject match = (JSONObject) matches.get(i);
-			System.out.println(matches);
 			setLabels(i,match, mainScoresPanel);
 		}
-		
-		JScrollPane scrollPane = new JScrollPane(mainScoresPanel);
-		scrollPane.setBounds(205,140, 340, 500);
+
+		JScrollPane scrollPane = new JScrollPane(mainScoresPanel);		
+		scrollPane.setBounds(5,140, 730, 500);
+		scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		add(scrollPane);
 		repaint();
+
 	}
 	private ImageIcon loadImage(String resourcePath) {
 		try {
@@ -326,7 +212,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		
 		//System.out.println("Could not find resource file");
 		return null;
->>>>>>> 89260203032189b3200ab7f80d2a4c43aa747fb8
+
 	}
 
 
