@@ -3,7 +3,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -16,14 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-import javax.swing.JTextArea;
 import org.json.simple.JSONObject;
 
 import javax.swing.JFrame;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import org.json.simple.JSONArray;
@@ -33,7 +29,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 	
 	public FootBallResultSystemGUI() {
 		super("FootBall Result System");
-		setSize(750,900);
+		setSize(750,700);
 		setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
@@ -98,25 +94,23 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		public void setLabels(int index, JSONObject match, JPanel mainScores) {
 			
 			
-				JSONObject matchJson = (JSONObject) match;
-				JSONObject homeTeamJson = (JSONObject) matchJson.get("homeTeam");
-				String homeTeamName = (String) homeTeamJson.get("shortName");
-				String homeTeamlogo = (String) homeTeamJson.get("crest");
+		JSONObject matchJson = (JSONObject) match;
+	        JSONObject homeTeamJson = (JSONObject) matchJson.get("homeTeam");
+		String homeTeamName = (String) homeTeamJson.get("shortName");
 				
-				JSONObject awayTeamJson = (JSONObject) matchJson.get("awayTeam");
-				String awayTeamName = (String) awayTeamJson.get("shortName");
-				String awayTeamlogo = (String) awayTeamJson.get("crest");
+		JSONObject awayTeamJson = (JSONObject) matchJson.get("awayTeam");
+		String awayTeamName = (String) awayTeamJson.get("shortName");
 				
-				String dateJson = (String) matchJson.get("utcDate");
+		String dateJson = (String) matchJson.get("utcDate");
 				
-				JSONObject ScoreJson = (JSONObject) matchJson.get("score");
-				JSONObject score = (JSONObject) ScoreJson.get("fullTime");
-				Long scoreA = (Long) score.get("home");
-				Long scoreB = (Long) score.get("away");
+		JSONObject ScoreJson = (JSONObject) matchJson.get("score");
+		JSONObject score = (JSONObject) ScoreJson.get("fullTime");
+		Long scoreA = (Long) score.get("home");
+		Long scoreB = (Long) score.get("away");
 		
-				String StatusJson = (String) matchJson.get("status");
+		String StatusJson = (String) matchJson.get("status");
 			
-		JLabel date,resultgameA,resultgameB, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB,gameStates, week; 
+		JLabel date,resultgameA,resultgameB,teamNameA, teamNameB,gameStates; 
 		
 		
 		 JPanel gamesResultLable= new JPanel();
@@ -183,11 +177,6 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		mainScoresPanel.setBounds(5, 140, 730, 500);
 		mainScoresPanel.setLayout(new GridLayout(0, 1, 10, 10));
 		mainScoresPanel.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-
-// 		mainScoresPanel.setLayout(new BoxLayout(mainScoresPanel, BoxLayout.Y_AXIS));
- 		//mainScoresPanel.setLayout(new BorderLayout());/
- 		
- 		
  		
 		for (int i =0; i < matches.size(); i++) {
 	
@@ -210,7 +199,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 			e.printStackTrace();
 		}
 		
-		//System.out.println("Could not find resource file");
+		System.out.println("Could not find resource file");
 		return null;
 
 	}
