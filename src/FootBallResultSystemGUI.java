@@ -110,12 +110,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		
 		String StatusJson = (String) matchJson.get("status");
 			
-<<<<<<< HEAD
 		JLabel date,resultgameA,resultgameB, teamNameA, teamNameB,gameStates; 
-=======
-		JLabel date,resultgameA,resultgameB,teamNameA, teamNameB,gameStates; 
->>>>>>> 8b000278de40921a8e3bb0f245f866f8436e8906
-		
 		
 		 JPanel gamesResultLable= new JPanel();
 		 gamesResultLable.setPreferredSize(new Dimension(730,180));
@@ -195,21 +190,5 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		repaint();
 
 	}
-<<<<<<< HEAD
-=======
-	private ImageIcon loadImage(String resourcePath) {
-		try {
-			BufferedImage image = ImageIO.read(new File(resourcePath));
-			return new ImageIcon(image);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		System.out.println("Could not find resource file");
-		return null;
-
-	}
-
->>>>>>> 8b000278de40921a8e3bb0f245f866f8436e8906
 
 }
