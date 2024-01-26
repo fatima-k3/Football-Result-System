@@ -116,7 +116,7 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		
 				String StatusJson = (String) matchJson.get("status");
 			
-		JLabel date,resultgameA,resultgameB, teamLogoA, teamLogoB, teamNameA, teamNameB,scorerA,scorerB,gameStates, week; 
+		JLabel date,resultgameA,resultgameB, teamNameA, teamNameB,gameStates; 
 		
 		
 		 JPanel gamesResultLable= new JPanel();
@@ -202,18 +202,5 @@ public class FootBallResultSystemGUI extends JFrame implements ActionListener {
 		repaint();
 
 	}
-	private ImageIcon loadImage(String resourcePath) {
-		try {
-			BufferedImage image = ImageIO.read(new File(resourcePath));
-			return new ImageIcon(image);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		//System.out.println("Could not find resource file");
-		return null;
-
-	}
-
 
 }
